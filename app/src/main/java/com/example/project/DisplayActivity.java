@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class DisplayActivity extends AppCompatActivity {
@@ -16,24 +19,22 @@ public class DisplayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        name = findViewById(R.id.edit_text);
-        button = findViewById(R.id.save);
+        setContentView(R.layout.activity_display);
+        name = findViewById(R.id.EditText);
+        Knappen = findViewById(R.id.save);
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
-        return = findViewById(R.id.tillback);
-        return.setOnClickListener(new View.OnClickListener() {
+        Return = findViewById(R.id.Return);
+        Return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-    }
-    button.setOnClickListener(new View.OnClickListener() {
+    Knappen.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("name", namn.getText().toString());
+            editor.putString("name", name.getText().toString());
             editor.apply();
         }
     });
