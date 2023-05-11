@@ -30,13 +30,13 @@ public class DisplayActivity extends AppCompatActivity {
                 finish();
             }
         });
-    Knappen.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("name", name.getText().toString());
-            editor.apply();
-        }
-    });
-}
+        Knappen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("name", name.getText().toString());
+                editor.apply();
+            }
+        });
+    }
 }
